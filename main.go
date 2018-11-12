@@ -68,7 +68,10 @@ func (e *Exporter) Describe(ch chan<- *prometheus.Desc) {
 	ch <- swarmTasks
 	ch <- swarmServiceReplicas
 	ch <- swarmServiceRunningReplicas
+	ch <- swarmNodes
 	ch <- swarmServiceUpdateState
+	ch <- swarmServiceLastUpdate
+	ch <- swarmServiceLabel
 }
 
 func (e *Exporter) Collect(ch chan<- prometheus.Metric) {
